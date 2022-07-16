@@ -9,9 +9,6 @@ const HeroSection = () => {
         <div className="hero-section-container-describe">
           <h1>Khối Hy Vọng</h1>
           <h6>Tôi hạnh phúc khi mọi người hạnh phúc</h6>
-          <div className="hero-section-container-content">
-            <p>Mỗi </p>
-          </div>
           <button className="hero-section-button">
             <Link to="/story">Giới thiệu</Link>
           </button>

@@ -32,7 +32,7 @@ const ListDonors = () => {
             <th>Tên</th>
           </tr>
         </thead>
-        {formData.length > 0 ? (
+        {formData?.length > 0 ? (
           formData.map((item) => {
             return (
               <tr>

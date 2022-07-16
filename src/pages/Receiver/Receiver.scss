@@ -21,6 +21,7 @@
     justify-content: flex-start;
     -webkit-box-align: center;
     align-items: center;
+    color: white;
     &-card{
         width: 600px;
         padding: 24px 40px;
@@ -36,13 +37,21 @@
         color: rgb(255, 255, 255);
     }
     &-button{
+        margin-top: 16px;
         width: 250px;
         height: 60px;
         background: #01BFDE;
+        color: white;
         border-radius: 4px;
         outline: none;
         border: none;
         cursor: pointer;
+    }
+    &-p{
+      display: inline-block;
+    }
+    &-money{
+      margin-top: 16px;
     }
 }
 
@@ -65,10 +74,31 @@
         height: 60px;
         background: #01BFDE;
         border-radius: 4px;
+        color: white;
         outline: none;
         border: none;
         cursor: pointer;
     }
+}
+
+.bar{
+  &-wrapper {
+    text-align: center;
+  }
+  
+  &-container {
+    background-color: tomato;
+  }
+  
+  &-barCompleted {
+    background-color: #01BFDE;
+    width: 80%;
+  }
+  
+  &-label {
+    font-size: 20px;
+    color: white;
+  }
 }
 
 th {

@@ -8,6 +8,7 @@ import Modal from '@mui/material/Modal';
 import Navbar from "../../components/Navbar/Navbar";
 import { useParams } from 'react-router-dom';
 import "./Receiver.scss";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 const style = {
     position: 'absolute',
@@ -24,6 +25,12 @@ const style = {
 const initialFormData = {
     amount: 0
 };
+
+const initialReceiverData = {
+    title: "",
+    content: "",
+    max_money: 0
+}
   
 
 const Receiver = () => {
@@ -32,8 +39,9 @@ const Receiver = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const { id } = useParams();
-    const [formData, setFormData] = useState(initialFormData);
     let token = localStorage.getItem("token");
+    const [receiver, setReceiver] = useState({});
+    const [blockChain, setBlockChain] = useState([]);
 
     useEffect(() => {
         const checkLoggedIn = async () => {
@@ -50,11 +58,30 @@ const Receiver = () => {
                         }
                     }
                 );
-                setFormData(userResponse.data.donationList);
+                setBlockChain(userResponse.data.blockChain);
             }
         };
 
+        const getReceiver = async () => {
+            if (token === null) {
+                localStorage.setItem("token", "");
+                token = "";
+            }
+            if (token) {
+                const userResponse = await axios.get(
+                    `https://khoi-hi-vong.herokuapp.com/api/user/receiver/${id}`,
+                    {
+                        headers: {
+                            authorization: token,
+                        }
+                    }
+                );
+                setReceiver(userResponse.data.receiver);
+            }
+        }
+
         checkLoggedIn();
+        getReceiver();
     }, []);
 
     const handleChange = (e) => {
@@ -102,8 +129,19 @@ const Receiver = () => {
                     <div className="funding container">
                         <div className="funding-card">
                             <h2 className="funding-title">
-                                Hello word
+                                {receiver?.title}
                             </h2>
+                            <ProgressBar
+                                completed={receiver.current_money/receiver.max_money*100}
+                                margin="auto"
+                                className="bar-wrapper"
+                                barContainerClassName="bar-container"
+                                completedClassName="bar-barCompleted"
+                                labelClassName="bar-label"
+                            />
+                            <div className="funding-money">
+                                <h6 className="funding-p">{receiver.current_money}</h6> <p className="funding-p"> {`đã được quyên góp trên tổng số ${receiver.max_money}`}</p>
+                            </div>
                             <button className="funding-button" onClick={handleOpen}>
                                 Quyên góp
                             </button>
@@ -119,34 +157,36 @@ const Receiver = () => {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>Loại</th>
-                            <th>Số lượng</th>
+                            <th>Tên</th>
+                            <th>Số tiền</th>
                             <th>Ngày</th>
-                            <th>Số điểm</th>
+                            <th>Chi tiết giao dịch</th>
                         </tr>
                     </thead>
-                    {formData?.length > 0 ? (
-                        formData.reverse().map((item) => {
-                            return (
-                                <tr>
-                                    <td>
-                                        {item.type_of_donation == 1
-                                            ? "Tiền"
-                                            : "Quần áo"}
-                                    </td>
-                                    <td>
-                                        {item.type_of_donation == 1
-                                            ? item.money
-                                            : item.clothes_amount}
-                                    </td>
-                                    <td>{item.createdAt.slice(0, 10)}</td>
-                                    <td>{item.total_point}</td>
-                                </tr>
-                            );
-                        })
-                    ) : (
-                        <div></div>
-                    )}
+                    <tbody>
+                        {blockChain.length > 0 ? (
+                            blockChain.map((block, index) => {
+                                return (
+                                    <tr>
+                                        <td>
+                                            {block.transaction.from.fullname}   
+                                        </td>
+                                        <td>
+                                            {block.transaction.amount}   
+                                        </td>
+                                        <td>
+                                            {block.transaction.timestamp}   
+                                        </td>
+                                        <td>
+                                            {block.transaction.from.fullname}   
+                                        </td>
+                                    </tr>
+                                );
+                            })
+                        ) : (
+                            <div></div>
+                        )}
+                    </tbody>
                 </table>
             </div>
             <Modal
