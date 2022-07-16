@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "./Receiver.scss";
+import "./ReceiverList.scss";
 import { Link } from "react-router-dom";
 import { CircularProgressbar,buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css'
@@ -7,7 +7,7 @@ import { CorruptPageTreeError } from "pdf-lib";
 import { GoTextSize } from "react-icons/go";
 import axios from "axios";
 
-const Receiver = () => {
+const ReceiverList = () => {
   const [receivers, setReceivers] = useState([]);
   let token = localStorage.getItem("token");
 
@@ -39,10 +39,7 @@ const Receiver = () => {
       </h1>
       <div className="receiver-row">
       {receivers?.length > 0 ? (
-          receivers.map((receiver, index) => {
-            if(index > 2){
-              return;
-            }
+          receivers.map((receiver) => {
             return (
               <div className="receiver-block">
                 <div className="receiver-block-img">
@@ -75,7 +72,6 @@ const Receiver = () => {
                       {receiver.content}
                     </p>
                   </div>
-
                   <div className="receiver-block-describe-btn">
                     <button>
                      <Link to={`receiver/${receiver._id}`}>Quyên góp</Link>
@@ -90,12 +86,7 @@ const Receiver = () => {
           <div></div>
         )}
       </div>
-      <button className="more-details">
-        <Link to="/ReceiverList">
-          Xem Thêm
-        </Link>
-      </button>
     </div>
   );
 };
-export default Receiver;
+export default ReceiverList;
