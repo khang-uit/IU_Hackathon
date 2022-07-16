@@ -50,8 +50,8 @@ const Sidebar = () => {
           </div>
         ) : (
           <div className="sidebar-panel--not-login">
-            <Link to="/login">Login</Link>
-            <p>Đăng nhập để xem số điểm của bạn</p>
+
+            <p><Link to="/login">Đăng nhập</Link> để xem số điểm của bạn</p>
           </div>
         )}
         <div className="sidebar-panel-voucher-tags">

@@ -2,6 +2,8 @@
 .sidebar-panel {
   background-color: #f1f1f1;
   display: flex;
+  margin: 40px 40px;
+  width: 250px;
   flex-direction: column;
   @include small-tablet {
     width: 100%;
@@ -16,13 +18,13 @@
     h2 {
       font-size: 18px;
       font-weight: 500;
-      color: tomato;
+      color: #01BFDE;
     }
     p {
       strong {
         color: #000;
       }
-      color: #60e0af;
+      color: #01BFDE;
     }
   }
   &--not-login {
@@ -32,14 +34,14 @@
       text-decoration: none;
       font-size: 18px;
       font-weight: 500;
-      color: tomato;
-      padding: 6px 12px;
+      color: #01BFDE;
+
       &:hover {
         color: #000;
       }
     }
     p {
-      font-size: 14px;
+      font-size: 18px;
       line-height: 1.4;
     }
   }
@@ -52,6 +54,7 @@
 
       li {
         text-decoration: none;
+        font-size:18px;
         color: #000;
         display: block;
         padding: 10px 15px;
@@ -62,7 +65,7 @@
   }
 }
 .active {
-  background-color: #f2540c;
+  background-color: #01BFDE;
   a {
     color: #fff;
   }
