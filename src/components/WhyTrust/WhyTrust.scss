@@ -1,27 +1,29 @@
 .why-trust {
-  margin: 150px 0;
+  margin: 150px 0 50px 0 ;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   background-color: #01BFDE;
   &-title {
     color: white;
     font-weight: 700;
-    margin: 0px 0 40px 0;
+    margin: 7% 0 0 0;
 
   }
   &-container{
     width: 80%;
-    margin:auto;
+    margin: auto;
+
 
     &-reason{
       width: 100%;
+
       display: flex;
-      margin: 10px 0;
+      margin: 14% 0;
 
       &-img{
         width: 50%;
-
-        margin: 0 20px;
+        top:50%;
+        margin: 5% 20px;
         img{
           width:75%;
         }
@@ -32,6 +34,7 @@
         text-align: left;
         margin: 10px 80px;
         color: white;
+        line-height: 50px;
         padding:20px;
         a{
 
@@ -46,7 +49,7 @@
         }
         h4{
           font-size: 32px;
-          margin: 20px 0;
+          margin: 40px 0;
         }
 
       }
@@ -59,12 +62,13 @@
   }
 
   button{
+    margin:0 0 10% 0;
     padding: 0;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 100px;
     border: solid white 0.5px;
-    width: 150px;
-    height: 50px;
+    width: 15%;
+    height: 80px;
 
     a{
 

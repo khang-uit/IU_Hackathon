@@ -1,4 +1,5 @@
 import Login from "./components/Login/Login";
+import ReceiverList from "./components/ReceiverList/ReceiverList";
 import Register from "./components/Register/Registe";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -42,6 +43,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/ReceiverList" element={<ReceiverList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/donation" element={<Donation />} />

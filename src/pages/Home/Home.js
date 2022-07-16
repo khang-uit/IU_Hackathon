@@ -7,6 +7,7 @@ import WorkSection from "../../components/WorkSeciton/WorkSection";
 import TopDonate from "../../components/TopDonate/TopDonate";
 import WhyTrust from "../../components/WhyTrust/WhyTrust";
 import Receiver from "../../components/Receiver/Receiver"
+import ReceiverList from "../../components/ReceiverList/ReceiverList"
 
 const Home = () => {
   return (
@@ -16,8 +17,8 @@ const Home = () => {
       <WhyTrust />
       <Receiver />
       <WorkSection />
-
       <BenefitDonate />
+      <ReceiverList />
 
       {/* <TopDonate /> */}
     </>
