@@ -20,7 +20,7 @@ const ListVoucher = () => {
     useEffect(() => {
         const getListVouchers = async () => {
             const res = await axios.get(
-                "https://khoi-hi-vong.herokuapp.com/api/voucher/list?page=1"
+                "https://khoi-hi-vong.herokuapp.com/api/user/voucher"
             );
             setData(res.data.vouchers);
         };
@@ -34,7 +34,7 @@ const ListVoucher = () => {
         };
         const addCode = async () => {
             const res = await axios.post(
-                "https://khoi-hi-vong.herokuapp.com/api/voucher/newcode",
+                "https://khoi-hi-vong.herokuapp.com/api/admin/add-voucher-code",
                 formReq,
                 {
                     headers: {

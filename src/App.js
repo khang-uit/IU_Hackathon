@@ -43,7 +43,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ReceiverList" element={<ReceiverList />} />
+        <Route path="/receiver" element={<ReceiverList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/donation" element={<Donation />} />

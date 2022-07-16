@@ -149,7 +149,7 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="navbar-menu-item">
-            <Link to="/donation">Quyên góp</Link>
+            <Link to="/receiver">Hoàn cảnh</Link>
           </li>
           <li className="navbar-menu-item">
             <Link to={token ? "/history" : "/login"}>Lịch sử quyên góp</Link>

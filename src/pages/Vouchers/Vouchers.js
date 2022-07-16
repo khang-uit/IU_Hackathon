@@ -24,7 +24,7 @@ const Vouchers = () => {
         setData(category);
       } else {
         let res = await axios.get(
-          "https://khoi-hi-vong.herokuapp.com/api/voucher/list?page=1"
+          "https://khoi-hi-vong.herokuapp.com/api/user/voucher"
         );
         setData(res.data.vouchers);
       }

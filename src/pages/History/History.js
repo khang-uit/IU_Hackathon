@@ -1,12 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import "./History.scss";
 const initialFormData = {};
 
 const History = () => {
-    const [formData, setFormData] = useState(initialFormData);
+    const [history, setHistory] = useState(initialFormData);
     const token = window.localStorage.getItem("token");
     useEffect(() => {
         const checkLoggedIn = async () => {
@@ -17,58 +18,60 @@ const History = () => {
             }
             if (token) {
                 const userResponse = await axios.get(
-                    "https://khoi-hi-vong.herokuapp.com/api/user/donation",
+                    "https://khoi-hi-vong.herokuapp.com/api/user/history",
                     {
                         headers: {
                             authorization: token,
                         },
                     }
                 );
-                setFormData(userResponse.data.donationList);
+                setHistory(userResponse.data.history);
             }
         };
 
         checkLoggedIn();
     }, []);
-    console.log(formData);
+
     return (
         <>
             <Navbar />
             <div className="history-donation-header">
-                <h3 className="history-donation-title">Lịch sử quyên góp</h3>
+                <h1 className="history-donation-title">Lịch sử quyên góp</h1>
             </div>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Loại</th>
-                        <th>Số lượng</th>
-                        <th>Ngày</th>
-                        <th>Số điểm</th>
-                    </tr>
-                </thead>
-                {formData.length > 0 ? (
-                    formData.reverse().map((item) => {
-                        return (
-                            <tr>
-                                <td>
-                                    {item.type_of_donation == 1
-                                        ? "Tiền"
-                                        : "Quần áo"}
-                                </td>
-                                <td>
-                                    {item.type_of_donation == 1
-                                        ? item.money
-                                        : item.clothes_amount}
-                                </td>
-                                <td>{item.createdAt.slice(0, 10)}</td>
-                                <td>{item.total_point}</td>
-                            </tr>
-                        );
-                    })
-                ) : (
-                    <div></div>
-                )}
-            </table>
+            <div className="history-table">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Hoàn cảnh</th>
+                            <th>Số tiền</th>
+                            <th>Ngày</th>
+                            <th>Chi tiết giao dịch</th>
+                        </tr>
+                    </thead>
+                    {history.length > 0 ? (
+                        history.reverse().map((item) => {
+                            return (
+                                <tr>
+                                    <td>
+                                        {item.transaction.to.title}
+                                    </td>
+                                    <td>
+                                        {item.transaction.amount}
+                                    </td>
+                                    <td>
+                                        {item.transaction.timestamp}
+                                    </td>
+                                    <td>
+                                        <Link to={`/transaction/${item._id}`} className="transaction">Transaction</Link>
+                                    </td>
+                                </tr>
+                            );
+                        })
+                    ) : (
+                        <div></div>
+                    )}
+                </table>
+            </div>
         </>
     );
 };

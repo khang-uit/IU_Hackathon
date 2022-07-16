@@ -91,7 +91,7 @@ const Receiver = () => {
         )}
       </div>
       <button className="more-details">
-        <Link to="/ReceiverList">
+        <Link to="/receiver">
           Xem Thêm
         </Link>
       </button>
