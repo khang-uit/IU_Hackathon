@@ -1,7 +1,7 @@
 .work-section {
   padding: 0 20px;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 150px;
   &-title {
     font-weight: 700;
   }
@@ -9,8 +9,8 @@
   h1 {
     text-align: center;
     color: #01BFDE;
-
     text-transform: uppercase;
+
   }
   &-container {
     margin-top: 60px;
@@ -21,27 +21,35 @@
   &-item {
     text-align: center;
     padding: 0 38px;
-    margin: 0 20px;
+    margin: 40px 20px;
     width: 400px;
     height: 500px;
+
     img {
+      width: 150px;
+      height: 150px;
       max-width: 100%;
     }
     h4 {
-      font-size: 20px;
+      display: block;
+      margin: 40px 0;
+      font-size: 24px;
       color: #01BFDE;
     }
     p {
+      padding: 0 20px;
+      margin-top:40px;
       text-align: center;
-      font-size: 15px;
+      font-size: 20px;
       letter-spacing: 0.8px;
+      line-height: 40px;
     }
     &-title {
       font-weight: 600;
     }
   }
   button {
-    margin-top: 60px;
+    margin-top: 80px;
     background: #01BFDE;
     color: #fff;
     width: 150px;
@@ -55,7 +63,7 @@
     text-transform: uppercase;
     border-radius: 3px;
     &:hover {
-      background-color: #337747;
+      background-color: #0094AB;
     }
   }
 }

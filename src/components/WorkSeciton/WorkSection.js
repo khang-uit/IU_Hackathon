@@ -19,7 +19,7 @@ const WorkSection = () => {
         <div className="work-section-item">
           <img src={step_2} alt="" />
           <h4 className="work-section-item-title">
-            Lựa Chọn Hoàn Cảnh Để Ủng Hộ
+           Chọn Hoàn Cảnh Để Ủng Hộ
           </h4>
           <p>
             Hằng tháng, chúng tôi sẽ cập nhật danh sách các hoàn cảnh khó khăn. Bạn có thể ủng hộ bất kì
@@ -27,7 +27,9 @@ const WorkSection = () => {
         </div>
         <div className="work-section-item">
           <img src={step_3} alt="" />
-          <h4 className="work-section-item-title"></h4>
+          <h4 className="work-section-item-title">
+            Đổi Quà Hấp Dẫn
+          </h4>
           <p>
             Những nhà tài trợ sẽ gửi đến những người quyên góp các voucher của
             những sản phẩm nhằm tri ân những điều tốt đẹp của người quyên góp

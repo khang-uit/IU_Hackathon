@@ -16,9 +16,9 @@ const Home = () => {
       <WhyTrust />
       <Receiver />
       <WorkSection />
-      <DonateSection />
+
       <BenefitDonate />
-      <WhyTrust />
+
       {/* <TopDonate /> */}
     </>
   );
