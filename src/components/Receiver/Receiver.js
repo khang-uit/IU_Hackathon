@@ -51,8 +51,8 @@ const Receiver = () => {
                     </div>
                     <div className="receiver-block-img-details-chart">
                     <CircularProgressbar
-                      value= {60}
-                      text={`60%`}background
+                      value= {receiver.current_money/receiver.max_money*100}
+                      text={`${receiver.current_money/receiver.max_money*100}%`}background
                       backgroundPadding={6}
                       styles={buildStyles({
                         backgroundColor: "#3e98c7",

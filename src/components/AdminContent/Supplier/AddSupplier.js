@@ -16,11 +16,7 @@ const initialFormData = {
 const AddSupplier = () => {
     const [formData, setFormData] = useState(initialFormData);
 
-    const [uploadImage, setUploadImage] = useState({
-        image: null,
-        url: '',
-        progress: 0
-    });
+    const [uploadImage, setUploadImage] = useState(null);
 
     const handleOnChange = (e) => {
         const { name, value } = e.target;
@@ -28,10 +24,7 @@ const AddSupplier = () => {
         if (name === "image") {
             if (e.target.files[0]) {
                 const image = e.target.files[0];
-                setUploadImage({
-                    ...uploadImage,
-                    image: image,
-                });
+                setUploadImage(image);
                 return;
             }
         }
@@ -48,38 +41,24 @@ const AddSupplier = () => {
         e.preventDefault();
 
         try {
-            const getUrl = () => {
-                return new Promise((resolve, reject) => {
-                    const {image} = uploadImage;
-                    if (image == null) return;
-                    const imageRef = ref(storage, `images/${image.name + v4()}`);
-                    uploadBytes(imageRef, image).then((snapshot) => {
-                        getDownloadURL(snapshot.ref).then((url) => {
-                            resolve(url)
-                        });
-                    });
-                })
-            }
-            
-            const url = await getUrl();
-
             if (token) {
                 const res = await axios.post(
-                    "https://khoi-hi-vong.herokuapp.com/api/supplier/new",
+                    "https://khoi-hi-vong.herokuapp.com/api/admin/supplier",
                     {
                         ...formData,
-                        image: url
+                        image: uploadImage
                     },
                     {
                         headers: {
                             authorization: token,
+                            'Content-Type': 'multipart/form-data'
                         },
                     }
                 );
                 alert(res.data.message);
                 setFormData({
                     supplier_name: "",
-                    image: "",
+                    image: null,
                 });
             }
         } catch (err) {

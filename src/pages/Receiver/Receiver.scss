@@ -32,9 +32,16 @@
         z-index: 100;
         transform: translate3d(0px, 0px, 0px);
     }
+    &-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     &-title{
         margin: 0px 0px 16px;
         color: rgb(255, 255, 255);
+    }
+    &-status{
     }
     &-button{
         margin-top: 16px;
@@ -107,6 +114,10 @@ th {
 }
 td {
   text-align: center;
+}
+
+.transaction{
+  text-decoration: underline;
 }
 
 

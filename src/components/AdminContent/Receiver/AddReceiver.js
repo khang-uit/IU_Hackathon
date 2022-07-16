@@ -6,18 +6,16 @@ const AddReceiver = () => {
         title: "",
         content: "",
         max_money: 0,
+        current_money: 0,
     });
 
-    const [uploadImage, setUploadImage] = useState({
-        image: null,
-    });
+    const [uploadImage, setUploadImage] = useState(null);
     
     const addReceiver = async (e) => {
         e.preventDefault();
         
         try {
             const token = window.localStorage.getItem("token");
-            
             if (token) {
                 const res = await axios.post(
                     "https://khoi-hi-vong.herokuapp.com/api/admin/receiver",
@@ -28,20 +26,19 @@ const AddReceiver = () => {
                     {
                         headers: {
                             authorization: token,
+                            'Content-Type': 'multipart/form-data'
                         },
                     }
                 );
                 alert(res.data.message);
             }
             setData({
-                description: "",
-                category: "",
-                supplier_name: "",
-                point_cost: "",
+                title: "",
+                content: "",
+                max_money: 0,
+                current_money: 0,
             });
-            setUploadImage({
-                image: null,
-            })
+            setUploadImage(null)
         } catch (err) {
             alert(err.response.data.message);
             console.log(err);
@@ -62,10 +59,7 @@ const AddReceiver = () => {
         if (name === "image") {
             if (e.target.files[0]) {
                 const image = e.target.files[0];
-                setUploadImage({
-                    ...uploadImage,
-                    image: image,
-                });
+                setUploadImage(image);
                 console.log(uploadImage)
                 return;
             }

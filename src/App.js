@@ -14,6 +14,8 @@ import UserInfo from "./pages/UserInfo/UserInfo";
 import Donors from "./pages/Donors/Donors";
 import Recharge from "./pages/Recharge/Recharge";
 import DonePayment from "./pages/DonePayment/DonePayment";
+import Transaction from "./pages/Transaction/Transaction";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -58,6 +60,7 @@ function App() {
         <Route path="/recharge" element={<Recharge />} />
         <Route path="/donepayment" element={<DonePayment />} />
         <Route path="/myvoucher" element={<MyVouchers />} />
+        <Route path="/transaction/:id" element={<Transaction />} />
         <Route
           path="/admin/voucher/add"
           element={<Admin route="/admin/voucher/add" />}

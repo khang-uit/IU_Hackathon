@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useParams } from 'react-router-dom';
 import "./Receiver.scss";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { Link, Route } from "react-router-dom";
 
 const style = {
     position: 'absolute',
@@ -128,11 +129,16 @@ const Receiver = () => {
                     <img className="hero-image" src="https://hieuvetraitim.com/attachments/1782/"/>
                     <div className="funding container">
                         <div className="funding-card">
-                            <h2 className="funding-title">
-                                {receiver?.title}
-                            </h2>
+                            <div className="funding-header">
+                                <h2 className="funding-title">
+                                    {receiver?.title}
+                                </h2>
+                                <h3 className="funding-status" style={{color: receiver?.status == 'DANG GAY QUY' ? 'tomato' : (receiver?.status == 'DAT CHI TIEU' ? '#01BFDE' : '#45945d')}}>
+                                    {receiver?.status}
+                                </h3>
+                            </div>
                             <ProgressBar
-                                completed={receiver.current_money/receiver.max_money*100}
+                                completed={100*receiver?.current_money/receiver?.max_money}
                                 margin="auto"
                                 className="bar-wrapper"
                                 barContainerClassName="bar-container"
@@ -178,7 +184,7 @@ const Receiver = () => {
                                             {block.transaction.timestamp}   
                                         </td>
                                         <td>
-                                            {block.transaction.from.fullname}   
+                                            <Link to={`/transaction/${block._id}`} className="transaction">Transaction</Link>
                                         </td>
                                     </tr>
                                 );
