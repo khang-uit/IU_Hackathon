@@ -41,6 +41,15 @@ const Transaction = () => {
                 <div className=" transaction-table">
                     <div className="transaction-table-row">
                         <div className="transaction-table-row-key">
+                            Previous Hash:
+                        </div>
+                        <div className="transaction-table-row-value">
+                            {transaction?.previousHash} 
+                        </div>
+                    </div>
+                    <hr></hr>
+                    <div className="transaction-table-row">
+                        <div className="transaction-table-row-key">
                             Hash:
                         </div>
                         <div className="transaction-table-row-value">

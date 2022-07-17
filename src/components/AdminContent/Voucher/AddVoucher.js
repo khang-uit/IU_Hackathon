@@ -27,7 +27,7 @@ const AddVoucher = () => {
         try {     
             if (token) {
                 const res = await axios.post(
-                    "https://khoi-hi-vong.herokuapp.com/api/user/add-voucher",
+                    "https://khoi-hi-vong.herokuapp.com/api/admin/voucher",
                     {
                         ...data,
                         image: uploadImage
@@ -68,10 +68,7 @@ const AddVoucher = () => {
         if (name === "image") {
             if (e.target.files[0]) {
                 const image = e.target.files[0];
-                setUploadImage({
-                    ...uploadImage,
-                    image: image,
-                });
+                setUploadImage(image);
                 console.log(uploadImage)
                 return;
             }
