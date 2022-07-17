@@ -18,7 +18,7 @@ const Home = () => {
       <Receiver />
       <WorkSection />
       <BenefitDonate />
-      <ReceiverList />
+
 
       {/* <TopDonate /> */}
     </>
