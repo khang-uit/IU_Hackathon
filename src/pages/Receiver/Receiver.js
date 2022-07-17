@@ -32,7 +32,7 @@ const initialReceiverData = {
     content: "",
     max_money: 0
 }
-  
+
 
 const Receiver = () => {
     const [open, setOpen] = React.useState(false);
@@ -144,6 +144,7 @@ const Receiver = () => {
                                 barContainerClassName="bar-container"
                                 completedClassName="bar-barCompleted"
                                 labelClassName="bar-label"
+                                bgColor="#01BFDE"
                             />
                             <div className="funding-money">
                                 <h6 className="funding-p">{receiver.current_money}</h6> <p className="funding-p"> {`đã được quyên góp trên tổng số ${receiver.max_money}`}</p>
@@ -175,13 +176,13 @@ const Receiver = () => {
                                 return (
                                     <tr>
                                         <td>
-                                            {block.transaction.from.fullname}   
+                                            {block.transaction.from.fullname}
                                         </td>
                                         <td>
-                                            {block.transaction.amount}   
+                                            {block.transaction.amount}
                                         </td>
                                         <td>
-                                            {block.transaction.timestamp}   
+                                            {block.transaction.timestamp}
                                         </td>
                                         <td>
                                             <Link to={`/transaction/${block._id}`} className="transaction">Transaction</Link>
@@ -208,8 +209,8 @@ const Receiver = () => {
                         name="amount"
                         InputLabelProps={{
                             shrink: true,
-                        }} 
-                        onChange={handleChange} 
+                        }}
+                        onChange={handleChange}
                     />
                     <button className="donate-button" onClick={handleSubmit}>
                         Quyên góp

@@ -29,25 +29,22 @@ const Donors = () => {
               Để tham gia tài trợ bạn có thể liên lạc với những thành viên sau{" "}
             </h3>
             <div className="donors-mentor">
-              <div className="donors-mentor-member">
-                <strong>Phạm Hữu Lộc</strong>{" "}
-                <span>Email: loc281202@gmail.com</span>
-              </div>
+
               <div className="donors-mentor-member">
                 <strong>Nguyễn Văn Khang</strong>{" "}
                 <span>Email: khang@gmail.com</span>
               </div>
               <div className="donors-mentor-member">
-                <strong>Trần Duy Khánh</strong>{" "}
+                <strong>Lâm Ngọc Huy</strong>{" "}
                 <span>Email: duykhanh@gmail.com</span>
               </div>
               <div className="donors-mentor-member">
-                <strong>Nguyễn Xuân Tuấn Kiệt</strong>{" "}
-                <span>Email: tuankiet@gmail.com</span>
+                <strong>Lương Đỗ Nhật Huy</strong>{" "}
+                <span>Email: nhathuy@gmail.com</span>
               </div>
               <div className="donors-mentor-member">
-                <strong>Tô Thái Duy</strong>
-                <span>Email: thaiduy@gmail.com</span>
+                <strong>Hà Danh Tuấn</strong>
+                <span>Email: danhtuan@gmail.com</span>
               </div>
             </div>
           </div>

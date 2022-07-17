@@ -10,12 +10,11 @@ const HowWeWork = () => {
         <div className="how-we-work-content">
           <h1>Khối Hy Vọng</h1>
           <p>
-            "Khối Hy Vọng" giúp bạn từ thiện thông qua tiền mặt và quần áo
+            "Khối Hy Vọng" giúp bạn từ thiện thông qua tiền mặt
             mà bạn muốn cho đi khiến chúng có thể làm ấm được một cuộc đời khác.
-            Thông qua hành vi vì mọi người ủa bạn, bạn sẽ nhận được điểm để đổi
-            voucher từ những nhà tài trợ cao cả. Giúp bạn có thể sắm thêm những
-            sản phẩm bạn cần với giá cả tốt hơn thị trường. Mọi người cùng có
-            cảm xúc tích cực
+            Thông qua hành động vì mọi người của bạn, bạn sẽ nhận được điểm để đổi
+            voucher từ những nhà tài trợ. Giúp bạn có thể sắm thêm những
+            sản phẩm bạn cần với giá cả tốt hơn thị trường.
           </p>
           <h1>Cách Chúng Tôi Hoạt Động</h1>
           <ul>
