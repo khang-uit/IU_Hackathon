@@ -46,7 +46,7 @@ const Receiver = () => {
             return (
               <div className="receiver-block">
                 <div className="receiver-block-img">
-                  <img src="https://vnn-imgs-f.vgcloud.vn/2022/02/24/10/nu-sinh-mo-coi-cha-mac-benh-hiem-ngheo-suot-9-nam-dang-nguy-kich-tinh-mang.jpg" alt="" />
+                  <img src={receiver.image} alt="" />
                   <div className="receiver-block-img-details">
                     <div className="receiver-block-img-details-total">
                       <h3>{receiver.max_money}</h3>

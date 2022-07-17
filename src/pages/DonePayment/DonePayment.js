@@ -35,7 +35,6 @@ const DonePayment = () => {
   const [searchParams] = useSearchParams();
 
   const currentParams = Object.fromEntries([...searchParams]);
-
   useEffect(() => {
     if (user) {
       const getPayment = async () => {

@@ -126,7 +126,7 @@ const Receiver = () => {
             <Navbar />
             <div>
                 <div className="header">
-                    <img className="hero-image" src="https://hieuvetraitim.com/attachments/1782/"/>
+                    <img className="hero-image" src={receiver.image}/>
                     <div className="funding container">
                         <div className="funding-card">
                             <div className="funding-header">
@@ -173,6 +173,7 @@ const Receiver = () => {
                     <tbody>
                         {blockChain.length > 0 ? (
                             blockChain.map((block, index) => {
+                                console.log(block._id);
                                 return (
                                     <tr>
                                         <td>
@@ -185,7 +186,7 @@ const Receiver = () => {
                                             {block.transaction.timestamp}
                                         </td>
                                         <td>
-                                            <Link to={`/transaction/${block._id}`} className="transaction">Transaction</Link>
+                                            <Link to={`/transaction/${block._id}`} className="transaction_alo">Transaction</Link>
                                         </td>
                                     </tr>
                                 );
