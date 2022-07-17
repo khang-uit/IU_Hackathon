@@ -1,0 +1,26 @@
+@import "../../Responsive.scss";
+.history-donation {
+  &-header {
+  }
+  &-title {
+    width: 75%;
+      border-bottom: solid #0094AB 5px;
+      margin:auto;
+      text-align: left;
+      color: #01BFDE;
+      font-weight: 700;
+      margin: 20px 12%;
+      padding-bottom: 10px;
+  }
+  &-table{
+    width: 75%;
+  }
+}
+
+th {
+  text-align: center;
+  color: tomato;
+}
+td {
+  text-align: center;
+}
